@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h1>Our Products</h1>
+        <div id="product-grid" class="product-grid">
+            <!-- Products will be loaded here by JavaScript -->
+            <p>Loading products...</p>
+        </div>
+        <div id="pagination-controls">
+            <!-- Pagination controls will be added here -->
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2024 Go E-Commerce</p>
+    </footer>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

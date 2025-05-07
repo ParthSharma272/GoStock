@@ -1,0 +1,15 @@
+{
+  "name": "go-ecommerce-frontend",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.14",
+    "vite": "^5.0.0"
+  }
+}

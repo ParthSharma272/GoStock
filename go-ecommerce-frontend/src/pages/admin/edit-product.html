@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Edit Product - Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Admin - Edit Product</h2>
+        <div id="message-container"></div>
+        <div id="admin-access-denied" style="display:none;">
+            <p class="alert alert-danger">Access Denied. You must be an administrator to perform this action.</p>
+             <p><a href="/">Go to Homepage</a></p>
+        </div>
+
+        <form id="edit-product-form" style="display:none;">
+            <input type="hidden" id="product-id" name="productId">
+            <div class="form-group">
+                <label for="name">Product Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="description">Description:</label>
+                <textarea id="description" name="description" rows="4"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="price">Price:</label>
+                <input type="number" id="price" name="price" step="0.01" min="0.01" required>
+            </div>
+            <div class="form-group">
+                <label for="stock">Stock:</label>
+                <input type="number" id="stock" name="stock" min="0" required>
+            </div>
+            <div class="form-group">
+                <label for="category_id">Category ID:</label>
+                <input type="number" id="category_id" name="category_id" min="1" required>
+                 <!-- In a real app, this would be a dropdown populated from a categories API -->
+            </div>
+            <button type="submit">Update Product</button>
+            <a href="/src/pages/admin/products.html" class="button button-secondary" style="margin-left:10px;">Cancel</a>
+        </form>
+        <p id="loading-product-data" style="display:none;">Loading product data...</p>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module">
+        import { initEditProductPage } from '/src/js/adminProductUi.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initEditProductPage();
+        });
+    </script>
+</body>
+</html>

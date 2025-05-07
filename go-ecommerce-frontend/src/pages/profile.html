@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>My Profile</h2>
+        <div id="message-container"></div>
+        <div id="profile-details">
+            <p>Loading profile...</p>
+        </div>
+
+        <hr style="margin: 30px 0;">
+
+        <h3>My Order History</h3>
+        <div id="order-history">
+            <p>Loading order history...</p>
+        </div>
+         <div id="login-prompt-profile" style="display:none;">
+            <p>You need to be logged in to view your profile and orders. <a href="/src/pages/login.html?redirect=/src/pages/profile.html">Login here</a>.</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module">
+        import { initProfilePage } from '/src/js/profileUi.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initProfilePage();
+        });
+    </script>
+</body>
+</html>

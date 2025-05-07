@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Checkout</h2>
+        <div id="message-container"></div>
+
+        <div id="checkout-summary">
+            <h3>Order Summary</h3>
+            <div id="checkout-items">
+                <!-- Items will be loaded here -->
+            </div>
+            <hr>
+            <p><strong>Total: $<span id="checkout-total">0.00</span></strong></p>
+        </div>
+
+        <div id="shipping-details-form" style="margin-top: 20px;">
+             <h3>Shipping Details (Simplified)</h3>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" name="address" placeholder="123 Main St" required>
+                </div>
+                <div class="form-group">
+                    <label for="city">City:</label>
+                    <input type="text" id="city" name="city" placeholder="Anytown" required>
+                </div>
+                <div class="form-group">
+                    <label for="postal_code">Postal Code:</label>
+                    <input type="text" id="postal_code" name="postal_code" placeholder="12345" required>
+                </div>
+                <button type="submit" id="place-order-btn">Place Order</button>
+            </form>
+        </div>
+         <div id="login-prompt" style="display:none;">
+            <p>You need to be logged in to place an order. <a href="/src/pages/login.html?redirect=/src/pages/checkout.html">Login here</a>.</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module">
+        // This script block is specific to checkout.html to ensure its JS runs.
+        // main.js will call initCheckoutPage if it exists
+        import { initCheckoutPage } from '/src/js/checkoutUi.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initCheckoutPage();
+        });
+    </script>
+</body>
+</html>

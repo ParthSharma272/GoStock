@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Detail - Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div id="product-detail-container">
+            <p>Loading product details...</p>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+</body>
+</html>

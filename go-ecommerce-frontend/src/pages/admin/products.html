@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Manage Products - Go E-Commerce</title>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" id="logo">GoShop</a>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <span id="guest-links">
+                    <li><a href="/src/pages/login.html">Login</a></li>
+                    <li><a href="/src/pages/register.html">Register</a></li>
+                </span>
+                <span id="user-links" style="display:none;">
+                    <li><a href="/src/pages/profile.html">Profile</a></li>
+                    <li><a href="/src/pages/cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+                </span>
+                <span id="admin-links" style="display:none;">
+                     <li><a href="/src/pages/admin/products.html">Admin Products</a></li>
+                </span>
+                <li id="logout-link" style="display:none;"><button id="logout-button">Logout</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Admin - Manage Products</h2>
+        <div id="message-container"></div>
+         <div id="admin-access-denied" style="display:none;">
+            <p class="alert alert-danger">Access Denied. You must be an administrator to view this page.</p>
+            <p><a href="/">Go to Homepage</a></p>
+        </div>
+        <div id="admin-content">
+            <p><a href="/src/pages/admin/add-product.html" class="button">Add New Product</a></p>
+            <div id="admin-product-list">
+                <p>Loading products...</p>
+            </div>
+            <div id="admin-pagination-controls" style="margin-top: 20px; text-align: center;">
+                <!-- Pagination controls will be added here -->
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module">
+        import { initAdminProductsPage } from '/src/js/adminProductUi.js';
+        document.addEventListener('DOMContentLoaded', () => {
+            initAdminProductsPage();
+        });
+    </script>
+</body>
+</html>

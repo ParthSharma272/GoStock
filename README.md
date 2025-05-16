@@ -38,6 +38,3 @@ GoShop is a full-stack e-commerce application built with a Go backend and a vani
 *   Payment Integration (Stripe/PayPal)
 *   Enhanced UI/UX, Search, Filtering
 *   Proper DB Migrations & Testing
-
----
-*For detailed project structure and contribution guidelines, please refer to the full documentation if available or explore the codebase.*

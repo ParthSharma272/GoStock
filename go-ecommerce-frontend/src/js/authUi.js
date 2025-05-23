@@ -13,9 +13,9 @@ export function initLoginPage() {
 
             if (result.token) {
                 setToken(result.token);
-                setUserRole(result.role); // Assuming backend returns role
+                setUserRole(result.role); 
                 displayMessage('Login successful!', 'success');
-                window.updateNav(); // Update nav defined in main.js
+                window.updateNav(); 
                 setTimeout(() => window.location.href = '/', 1000);
             } else {
                 displayMessage(result.error || 'Login failed.', 'danger');

@@ -1,7 +1,7 @@
 // src/js/main.js
 import { getToken, removeToken, getUserRole, removeUserRole, updateCartCount } from './utils.js';
-import { initLoginPage } from './authUI.js';
-import { initRegisterPage } from './authUI.js';
+import { initLoginPage } from './authUi.js';
+import { initRegisterPage } from './authUi.js';
 import { loadProducts, initProductDetailPage } from './productUi.js';
 import { initCartPage } from './cartUi.js';
 import { initAdminProductsPage, initAddProductPage, initEditProductPage } from './adminproductUi.js';

@@ -2,7 +2,8 @@ package postgres
 
 import (
 	"errors"
-	"github.com/ParthSharma272/GoStock/internal/domain/product" // Replace your_project_path
+
+	"github.com/ParthSharma272/GoStock/internal/domain/product"
 
 	"gorm.io/gorm"
 	"gorm.io/gorm/clause"
@@ -46,7 +47,7 @@ func (r *productRepository) Delete(db *gorm.DB, id uint) error {
 func (r *productRepository) UpdateStock(tx *gorm.DB, productID uint, quantityChange int) error {
 	var p product.Product
 	if err := tx.Clauses(clause.Locking{Strength: "UPDATE"}).First(&p, productID).Error; err != nil {
-		return err // Product not found or other DB error
+		return err
 	}
 
 	newStock := int(p.Stock) + quantityChange

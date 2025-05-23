@@ -11,14 +11,17 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// handles business logic related to authentication, such as user registration, login, and retrieving user details.
 type AuthHandler struct {
 	authService *service.AuthService
 }
 
+// Initializes an AuthHandler instance with an AuthService dependency.
 func NewAuthHandler(authService *service.AuthService) *AuthHandler {
 	return &AuthHandler{authService: authService}
 }
 
+// handles user registration via a POST request
 func (h *AuthHandler) Register(c *gin.Context) {
 	var req request.RegisterRequest
 	if err := c.ShouldBindJSON(&req); err != nil {

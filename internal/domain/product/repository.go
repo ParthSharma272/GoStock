@@ -8,5 +8,5 @@ type Repository interface {
 	FindAll(db *gorm.DB, offset, limit int) ([]Product, int64, error)
 	Update(db *gorm.DB, product *Product) error
 	Delete(db *gorm.DB, id uint) error
-	UpdateStock(tx *gorm.DB, productID uint, quantityChange int) error
+	// UpdateStock(tx *gorm.DB, productID uint, quantityChange int) error
 }
